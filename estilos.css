@@ -1,0 +1,236 @@
+body{
+  margin:0;
+}
+button{
+  margin: 10px 10px 10px 250px;
+}
+.seccion1{
+  width: 100%;
+  height: 700px;
+  background-color: green;
+}
+.al_lado{
+  display: flex;
+}
+.al_lado button{
+  margin-left: 100px;
+}
+.ancla{
+    margin-top: 600px;
+}
+p {
+    animation-duration: 3s;
+    animation-name: moverLetras;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+select, option{
+  margin: 10px;
+}
+.contenedor{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+}
+
+  
+@keyframes moverLetras {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+.formulario{
+    width: 80%;
+    margin: 10px;
+}
+.centrar{
+    text-align: center;
+    float: left;
+    margin-left: 100px;
+}
+
+table{
+    border: solid black 3px;
+    width: 95%;
+  
+}
+.seccion2{
+    width: 100%;
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 20px;
+}
+td{
+    text-align: center;
+    margin: 30px;
+    font-size: larger;
+    border: solid gray 1px;
+}
+.caja1{
+    width: 600px;
+    height: 550px;
+    background-color: aliceblue;
+    margin: 20px 20px 20px 85px;
+    float: left;
+    padding: 20px;
+}
+.cajas{
+    width: 280px;
+    height: 280px;
+    float: left;
+    margin: 20px 20px 20px 150px;
+}
+.ajuste{
+    width: 275px;
+    height: 275px;
+    border: solid black 3px;
+}
+.alinear{
+    text-align: justify;
+}
+.cajas2{
+    width: 280px;
+    height: 280px;
+    float: left;
+    background-color: antiquewhite;
+    margin: 20px 20px 20px 150px;
+}
+.seccion3{
+    width: 100%;
+    height: 700px;
+    background-color: rgba(255, 255, 245, 0.743);
+    padding-top: 20%;
+    padding-left: 40%;
+    
+}
+.circulosColores{
+   display: flex;/*organiza el fondo para que los elementos se acomoden en forma horizontal*/
+}
+h1{
+  opacity: .2;
+  font-size: 20px;
+  transition-duration: 2.5s;
+  transition-timing-function: linear;
+}
+h1:hover{
+  opacity: 1;
+  font-size: 50px;
+}
+.seccion4{
+    width: 100%;
+    height: 700px;
+    background-color: white;
+}
+.pelotaRoja{
+    width: 50px;
+    height: 20px;
+    background-color: red;
+    border-radius: 100%;/*redondea las formas*/
+    position: relative;/*permite que no se suporgan los elementos*/
+    transition-duration: 2s;/*determina la duracion de la transicion*/
+    transition-timing-function: ease;/*determina la funcion que se usa para transicionar*/
+    margin:20px;
+  }
+  .pelotaRoja:hover{
+    scale:2;/*se refiere a la escala del elemento, permite cambiar su tamaño*/
+    box-shadow: 0 0 20px rgb(139, 9, 9);/*determina la sombra del elemento*/
+  }
+  .pelotaAzul{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(8, 79, 146);
+    border-radius: 100%;
+    position: relative;
+    transition-duration: 2s;
+    transition-timing-function:steps(5);
+    margin:20px;
+  }
+  .pelotaAzul:hover{
+    scale:0.5;
+    background-color: aqua;
+    box-shadow: 17px 15px 10px black;
+  }
+  .pelotaVerde{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(30, 236, 11);
+    border-radius: 100%;
+    position: relative;
+    transition-duration: 1s;
+    margin:20px;
+    transition-delay: 0.4s;/*el tiempo que tarda en comenzar la transicion*/
+  }
+  .pelotaVerde:hover{
+    width: 0px;
+    height: 0px;
+    background-color: yellow;
+  }
+.pelotaVioleta{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(166, 22, 223);
+    opacity: 0;/*determina en valores de 0(transparente) a 1(opaco) la vista del elemento*/
+    border-radius: 100%;
+    position: relative;
+    transition-duration: 2s;
+    margin:13px;
+  }
+  .dos{
+     display: flex;
+  }
+  .dos:hover .pelotaVioleta{/*hover: es cuando el cursor esta sobre el elemento*/
+    opacity: 1;
+  }
+  .pelotaVioleta:first-child{/*hace referencia al "primer hijo"es decir la primera de 
+    las cajas con esa clase*/
+    transition-delay: 0s;
+  }
+  .pelotaVioleta:nth-child(2){/*hace referencia al "segundo hijo"es decir la segunda de 
+    las cajas con esa clase*/
+    transition-delay: 300ms;
+  }
+  .pelotaVioleta:nth-child(3){
+    transition-delay: 600ms;
+  }
+  .pacman{
+    margin: 30px;
+    animation: deslizar;/*nombre de la animacion*/
+    animation-duration: 6s;/*duracion de la animacion*/
+    animation-iteration-count:infinite;/*cantidad de veces que se ejecuta la animacion*/
+    animation-timing-function: ease-in-out;/*tipo de funcion de animacion*/
+    animation-direction:alternate;/*direccion de la animacion*/
+    opacity: 0.1;
+  }
+  @keyframes deslizar {
+    from{/*determina el punto inicial de la animacion*/
+      transform:translateX(0) ;
+    }
+    to{
+      transform: translateX(900px);/*determina la posicion destino*/
+      opacity: 1;
+    }
+  }
+  @media all and (min-width:600px)and (max-width:1023px){
+    .seccion1{
+      height: 1000px;
+      float: none;
+    }
+  }
+  @media all and (max-width:599px){
+    .seccion1{
+      height: 1910px;
+    }
+    .seccion2{
+      height: 1910px;
+      width: 90%;
+    }
+    .caja1{
+      width: 90%;
+    }
+  }
